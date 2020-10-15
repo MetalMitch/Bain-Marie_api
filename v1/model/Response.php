@@ -12,6 +12,7 @@
   public function setSuccess($success) {
     $this->_success = $success;
   }
+  
   public function setHttpStatusCode($httpStatusCode) {
     $this->_httpStatusCode = $httpStatusCode;
   }
