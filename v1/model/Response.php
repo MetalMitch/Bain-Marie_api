@@ -3,6 +3,7 @@
   class Response {
     private $_success;
     private $_httpStatusCode;
+    private $_rowsReturned;
     private $_messages = array();
     private $_data;
     private $_toCache = false;
@@ -11,9 +12,12 @@
   public function setSuccess($success) {
     $this->_success = $success;
   }
-
   public function setHttpStatusCode($httpStatusCode) {
     $this->_httpStatusCode = $httpStatusCode;
+  }
+
+  public function setRowsReturned($rowsReturned) {
+    $this->_rowsReturned = $rowsReturned;
   }
 
   public function addMessage($message) {
@@ -41,15 +45,15 @@
     if (($this->_success !== false && $this->_success !== true)  || !is_numeric($this->_httpStatusCode)) {
       $this->_responseData['success'] = false;
       http_response_code(500);
-      $this->_responseData['statusCode'] = 500;
       $this->addMessage("500 Internal Server Error");
       $this->_responseData['messages'] = $this->_messages;
     }
     else {
-      $this->_responseData['success'] = $this->_success;
       http_response_code($this->_httpStatusCode);
-      $this->_responseData['statusCode'] = $this->_httpStatusCode;
-      $this->_responseData['messages'] = $this->_messages;
+      $this->_responseData['rowsReturned'] = $this->_rowsReturned;
+      if (!empty($this->_messages)) {
+        $this->_responseData['messages'] = $this->_messages;
+      }
       $this->_responseData['data'] = $this->_data;
     }
 

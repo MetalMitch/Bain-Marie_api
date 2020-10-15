@@ -49,7 +49,7 @@ class Episode {
     return $this->_tmdbID;
   }
 
-//   Date Validation
+//   Date Validation Function
 
   public function isValidDate($date, $format = 'Y-m-d') {
     if($date === null || $date === "") {
@@ -59,6 +59,8 @@ class Episode {
     return $dateObj && $dateObj->format($format) == $date;
   }
 
+  // Check ID is a number and is not null as per database rules
+
   public function setId($id) {
     if (($id !== null) && (!is_numeric($id) || $this->_id !== null)) {
       throw new EpisodeException("Error: Episode ID Issue");
@@ -66,10 +68,12 @@ class Episode {
     $this->_id = $id;
   }
 
+  // Check Episode Name is not longer than 33 characters as per database rules
+
   public function setEpisodeName($episodeName) {
-    // if (strlen($episodeName) <= 0 || strlen($episodeName) >= 33) {
-    //   throw new EpisodeException("Error: Episode Name Issue");
-    // }
+    if (strlen($episodeName) <= 0 || strlen($episodeName) >= 33) {
+      throw new EpisodeException("Error: Episode Name Issue");
+    }
     $this->_episodeName = $episodeName;
   }
 
@@ -81,6 +85,8 @@ class Episode {
     $this->_episodeNum = $episodeNum;
   }
 
+  // Check Air Date is in the correct date format, using Date Validation Function as per database rules
+
   public function setAirDate($airDate) {
     if(($airDate != null) && !$this->isValidDate($airDate, 'd-m-Y')) {
       throw new EpisodeException("Error: Air Date Issue");
@@ -88,10 +94,12 @@ class Episode {
     $this->_airDate = $airDate;
   }
 
+    // Check overview is not longer than 539 characters as per database rules
+
   public function setOverview($overview) {
-    // if (strlen($overview) <= 0 || strlen($overview) >= 539) {
-    //   throw new EpisodeException("Error: Overview Issue");
-    // }
+    if (strlen($overview) <= 0 || strlen($overview) >= 539) {
+      throw new EpisodeException("Error: Overview Issue");
+    }
     $this->_overview = $overview;
   }
 

@@ -54,12 +54,11 @@ if(array_key_exists("episodeid", $_GET)) {
       }
 
       $returnData = array();
-      $returnData['rows_returned'] = $rowCount;
       $returnData['episodes'] = $episodeArray;
-
       $response = new Response();
       $response->setHttpStatusCode(200);
       $response->setSuccess(true);
+      $response->setRowsReturned($rowCount);
       $response->toCache(true);
       $response->setData($returnData);
       $response->send();
@@ -78,7 +77,7 @@ if(array_key_exists("episodeid", $_GET)) {
       $response = new Response();
       $response->setHttpStatusCode(500);
       $response->setSuccess(false);
-      $response->addMessage("Failed to Retrieve Episode");
+      $response->addMessage("Failed to Retrieve Episode(s)");
       $response->send();
       exit;
     }
@@ -92,72 +91,326 @@ else {
   exit;
   }
 }
-// elseif(array_key_exists("complete", $_GET)) {
-//   $complete = $_GET['complete'];
+elseif(array_key_exists("seriesNum", $_GET)) {
+  $seriesNum = $_GET['seriesNum'];
 
-//   if($complete !== 'Y' && $complete !== 'N') {
-//     $response = new Response();
-//     $response->setHttpStatusCode(400);
-//     $response->setSuccess(false);
-//     $response->addMessage("Error: Complete must be Y or N");
-//     $response->send();
-//     exit();
-//   }
+  if($seriesNum == '' || !is_numeric($seriesNum)) {
+    $response = new Response();
+    $response->setHttpStatusCode(400);
+    $response->setSuccess(false);
+    $response->addMessage("Series Number: Cannot be null and must be numeric");
+    $response->send();
+    exit;
+  }
 
-//   if($_SERVER['REQUEST_METHOD'] === 'GET') {
+  if($_SERVER['REQUEST_METHOD'] === 'GET') {
 
-//     try {
-//       $query = $readDB->prepare('select id, title, description, DATE_FORMAT(date, "%d-%m-%Y") as "date", start_time, end_time, DATE_FORMAT(deadline, "%d-%m-%Y %H:%i") as "deadline", complete from tbl_episodes where complete = :complete');
-//       $query->bindParam(':complete', $complete, PDO::PARAM_STR);
-//       $query->execute();
+    if(array_key_exists("episodeNum", $_GET)) {
+      $episodeNum = $_GET['episodeNum'];
 
-//       $rowCount = $query->rowCount();
-//       $episodeArray = array();
+      try {
+        $query = $readDB->prepare('select ID, episodeName, seriesNum, episodeNum, DATE_FORMAT(airDate, "%d-%m-%Y") as "airDate", overview, tmdbID from tbl_episodes where seriesNum = :seriesNum && episodeNum = :episodeNum');
+        $query->bindParam(':seriesNum', $seriesNum, PDO::PARAM_INT);
+        $query->bindParam(':episodeNum', $episodeNum, PDO::PARAM_INT);
+        $query->execute();
+  
+        $rowCount = $query->rowCount();
+        $episodeArray = array();
+  
+        if($rowCount === 0) {
+          $response = new Response();
+          $response->setHttpStatusCode(404);
+          $response->setSuccess(false);
+          $response->addMessage("Series Number Not Found");
+          $response->send();
+          exit;
+        }
+        while($row = $query->fetch(PDO::FETCH_ASSOC)) {
+          $episode = new Episode($row['ID'], $row['episodeName'], $row['seriesNum'], $row['episodeNum'], $row['airDate'], $row['overview'], $row['tmdbID']);
+          $episodeArray[] = $episode->getEpisodeAsArray();
+        }
+  
+        $returnData = array();
+        $returnData['episodes'] = $episodeArray;
+        $response = new Response();
+        $response->setHttpStatusCode(200);
+        $response->setSuccess(true);
+        $response->setRowsReturned($rowCount);
+        $response->toCache(true);
+        $response->setData($returnData);
+        $response->send();
+        exit;
+      }
+      catch(EpisodeException $exception) {
+        $response = new Response();
+        $response->setHttpStatusCode(500);
+        $response->setSuccess(false);
+        $response->addMessage($exception->getMessage());
+        $response->send();
+        exit;
+      }
+      catch(PDOException $exception) {
+  
+        $response = new Response();
+        $response->setHttpStatusCode(500);
+        $response->setSuccess(false);
+        $response->addMessage("Failed to Retrieve Episode(s)");
+        $response->send();
+        exit;
+      }
+    }
 
-//       while($row = $query->fetch(PDO::FETCH_ASSOC)) {
-//         $episode = new Episode($row['id'], $row['title'], $row['description'], $row['date'], $row['start_time'], $row['end_time'], $row['deadline'], $row['complete']);
-//         $episodeArray[] = $episode->getEpisodeAsArray();
-//       }
+    try {
+      $query = $readDB->prepare('select ID, episodeName, seriesNum, episodeNum, DATE_FORMAT(airDate, "%d-%m-%Y") as "airDate", overview, tmdbID from tbl_episodes where seriesNum = :seriesNum');
+      $query->bindParam(':seriesNum', $seriesNum, PDO::PARAM_INT);
+      $query->execute();
 
-//       $returnData = array();
-//       $returnData['rows_returned'] = $rowCount;
-//       $returnData['episodes'] = $episodeArray;
+      $rowCount = $query->rowCount();
+      $episodeArray = array();
 
-//       $response = new Response();
-//       $response->setHttpStatusCode(200);
-//       $response->setSuccess(true);
-//       $response->toCache(true);
-//       $response->setData($returnData);
-//       $response->send();
-//       exit();
-//     }
-//     catch(EpisodeException $exception) {
-//       $response = new Response();
-//       $response->setHttpStatusCode(400);
-//       $response->setSuccess(false);
-//       $response->addMessage($exception->getMessage());
-//       $response->send();
-//       exit();
-//     }
-//     catch(PDOException $exception) {
-//       $response = new Response();
-//       $response->setHttpStatusCode(500);
-//       $response->setSuccess(false);
-//       $response->addMessage("Error: Failed to Get Episodes");
-//       $response->send();
-//       exit();
-//     }
-//   }
-//   else
-//   {
-//     $response = new Response();
-//     $response->setHttpStatusCode(405);
-//     $response->setSuccess(false);
-//     $response->addMessage("Request method not allowed");
-//     $response->send();
-//     exit;
-//   }
-// }
+      if($rowCount === 0) {
+        $response = new Response();
+        $response->setHttpStatusCode(404);
+        $response->setSuccess(false);
+        $response->addMessage("Series Number Not Found");
+        $response->send();
+        exit;
+      }
+      while($row = $query->fetch(PDO::FETCH_ASSOC)) {
+        $episode = new Episode($row['ID'], $row['episodeName'], $row['seriesNum'], $row['episodeNum'], $row['airDate'], $row['overview'], $row['tmdbID']);
+        $episodeArray[] = $episode->getEpisodeAsArray();
+      }
+
+      $returnData = array();
+      $returnData['episodes'] = $episodeArray;
+      $response = new Response();
+      $response->setHttpStatusCode(200);
+      $response->setSuccess(true);
+      $response->setRowsReturned($rowCount);
+      $response->toCache(true);
+      $response->setData($returnData);
+      $response->send();
+      exit;
+    }
+    catch(EpisodeException $exception) {
+      $response = new Response();
+      $response->setHttpStatusCode(500);
+      $response->setSuccess(false);
+      $response->addMessage($exception->getMessage());
+      $response->send();
+      exit;
+    }
+    catch(PDOException $exception) {
+
+      $response = new Response();
+      $response->setHttpStatusCode(500);
+      $response->setSuccess(false);
+      $response->addMessage("Failed to Retrieve Episode(s)");
+      $response->send();
+      exit;
+    }
+  }
+else {
+  $response = new Response();
+  $response->setHttpStatusCode(405);
+  $response->setSuccess(false);
+  $response->addMessage("Request method not allowed");
+  $response->send();
+  exit;
+  }
+}
+elseif(array_key_exists("episodeNum", $_GET)) {
+  $episodeNum = $_GET['episodeNum'];
+
+  if($episodeNum == '' || !is_numeric($episodeNum)) {
+    $response = new Response();
+    $response->setHttpStatusCode(400);
+    $response->setSuccess(false);
+    $response->addMessage("Episode Number: Cannot be null and must be numeric");
+    $response->send();
+    exit;
+  }
+
+  if($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+    if (array_key_exists("xmas", $_GET)) {
+      $xmas = $_GET['xmas'];
+
+      if(strtoupper($xmas) == 'N') {
+        try {
+          $query = $readDB->prepare('select ID, episodeName, seriesNum, episodeNum, DATE_FORMAT(airDate, "%d-%m-%Y") as "airDate", overview, tmdbID from tbl_episodes where episodeNum = :episodeNum && seriesNum != 0');
+          $query->bindParam(':episodeNum', $episodeNum, PDO::PARAM_INT);
+          $query->execute();
+    
+          $rowCount = $query->rowCount();
+          $episodeArray = array();
+    
+          if($rowCount === 0) {
+            $response = new Response();
+            $response->setHttpStatusCode(404);
+            $response->setSuccess(false);
+            $response->addMessage("Episode Number Not Found");
+            $response->send();
+            exit;
+          }
+          while($row = $query->fetch(PDO::FETCH_ASSOC)) {
+            $episode = new Episode($row['ID'], $row['episodeName'], $row['seriesNum'], $row['episodeNum'], $row['airDate'], $row['overview'], $row['tmdbID']);
+            $episodeArray[] = $episode->getEpisodeAsArray();
+          }
+    
+          $returnData = array();
+          $returnData['episodes'] = $episodeArray;
+          $response = new Response();
+          $response->setHttpStatusCode(200);
+          $response->setSuccess(true);
+          $response->addMessage("Returned all episodes listed as number ".$episodeNum." in each season.");
+          $response->addMessage("'Christmas Specials' have been omitted from results, to include them, pass 'xmas' parameter as Y or remove the parameter'");
+          $response->addMessage("To search for episode number ".$episodeNum." in a specific series, pass the 'seriesNum' parameter with the number of the series you would like");
+          $response->setRowsReturned($rowCount);
+          $response->toCache(true);
+          $response->setData($returnData);
+          $response->send();
+          exit;
+        }
+        catch(EpisodeException $exception) {
+          $response = new Response();
+          $response->setHttpStatusCode(500);
+          $response->setSuccess(false);
+          $response->addMessage($exception->getMessage());
+          $response->send();
+          exit;
+        }
+        catch(PDOException $exception) {
+    
+          $response = new Response();
+          $response->setHttpStatusCode(500);
+          $response->setSuccess(false);
+          $response->addMessage("Failed to Retrieve Episode(s)");
+          $response->send();
+          exit;
+        }
+    }
+    elseif(strtoupper($xmas) == 'Y') {
+      try {
+        $query = $readDB->prepare('select ID, episodeName, seriesNum, episodeNum, DATE_FORMAT(airDate, "%d-%m-%Y") as "airDate", overview, tmdbID from tbl_episodes where episodeNum = :episodeNum');
+        $query->bindParam(':episodeNum', $episodeNum, PDO::PARAM_INT);
+        $query->execute();
+  
+        $rowCount = $query->rowCount();
+        $episodeArray = array();
+  
+        if($rowCount === 0) {
+          $response = new Response();
+          $response->setHttpStatusCode(404);
+          $response->setSuccess(false);
+          $response->addMessage("Episode Number Not Found");
+          $response->send();
+          exit;
+        }
+        while($row = $query->fetch(PDO::FETCH_ASSOC)) {
+          $episode = new Episode($row['ID'], $row['episodeName'], $row['seriesNum'], $row['episodeNum'], $row['airDate'], $row['overview'], $row['tmdbID']);
+          $episodeArray[] = $episode->getEpisodeAsArray();
+        }
+  
+        $returnData = array();
+        $returnData['episodes'] = $episodeArray;
+        $response = new Response();
+        $response->setHttpStatusCode(200);
+        $response->setSuccess(true);
+        $response->addMessage("Returned all episodes listed as number ".$episodeNum." in each season.");
+        $response->addMessage("Season 0 contains all episodes noted as 'Christmas Specials'");
+        $response->addMessage("To omit 'Christmas Special' episodes from results, pass the parameter 'xmas' as N");
+        $response->addMessage("To search for episode number ".$episodeNum." in a specific series, pass the 'seriesNum' parameter with the number of the series you would like");
+        $response->setRowsReturned($rowCount);
+        $response->toCache(true);
+        $response->setData($returnData);
+        $response->send();
+        exit;
+      }
+      catch(EpisodeException $exception) {
+        $response = new Response();
+        $response->setHttpStatusCode(500);
+        $response->setSuccess(false);
+        $response->addMessage($exception->getMessage());
+        $response->send();
+        exit;
+      }
+      catch(PDOException $exception) {
+  
+        $response = new Response();
+        $response->setHttpStatusCode(500);
+        $response->setSuccess(false);
+        $response->addMessage("Failed to Retrieve Episode(s)");
+        $response->send();
+        exit;
+      }
+  }
+    else {
+      $response = new Response();
+      $response->setHttpStatusCode(405);
+      $response->setSuccess(false);
+      $response->addMessage("Error: Invalid Parameter");
+      $response->addMessage("xmas: Can only be 'Y' or 'N'");
+      $response->send();
+      exit;
+      }
+  }
+    }
+
+    try {
+      $query = $readDB->prepare('select ID, episodeName, seriesNum, episodeNum, DATE_FORMAT(airDate, "%d-%m-%Y") as "airDate", overview, tmdbID from tbl_episodes where episodeNum = :episodeNum');
+      $query->bindParam(':episodeNum', $episodeNum, PDO::PARAM_INT);
+      $query->execute();
+
+      $rowCount = $query->rowCount();
+      $episodeArray = array();
+
+      if($rowCount === 0) {
+        $response = new Response();
+        $response->setHttpStatusCode(404);
+        $response->setSuccess(false);
+        $response->addMessage("Episode Number Not Found");
+        $response->send();
+        exit;
+      }
+      while($row = $query->fetch(PDO::FETCH_ASSOC)) {
+        $episode = new Episode($row['ID'], $row['episodeName'], $row['seriesNum'], $row['episodeNum'], $row['airDate'], $row['overview'], $row['tmdbID']);
+        $episodeArray[] = $episode->getEpisodeAsArray();
+      }
+
+      $returnData = array();
+      $returnData['episodes'] = $episodeArray;
+      $response = new Response();
+      $response->setHttpStatusCode(200);
+      $response->setSuccess(true);
+      $response->addMessage("Returned all episodes listed as number ".$episodeNum." in each season.");
+      $response->addMessage("Season 0 contains all episodes noted as 'Christmas Specials'");
+      $response->addMessage("To omit 'Christmas Special' episodes from results, pass the parameter 'xmas' as N");
+      $response->addMessage("To search for episode number ".$episodeNum." in a specific series, pass the 'seriesNum' parameter with the number of the series you would like");
+      $response->setRowsReturned($rowCount);
+      $response->toCache(true);
+      $response->setData($returnData);
+      $response->send();
+      exit;
+    }
+    catch(EpisodeException $exception) {
+      $response = new Response();
+      $response->setHttpStatusCode(500);
+      $response->setSuccess(false);
+      $response->addMessage($exception->getMessage());
+      $response->send();
+      exit;
+    }
+    catch(PDOException $exception) {
+
+      $response = new Response();
+      $response->setHttpStatusCode(500);
+      $response->setSuccess(false);
+      $response->addMessage("Failed to Retrieve Episode(s)");
+      $response->send();
+      exit;
+    }
+  }
 
 else {
   $response = new Response();
