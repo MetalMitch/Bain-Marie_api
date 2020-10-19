@@ -1,0 +1,794 @@
+{
+  "translation": [
+    {
+      "French": "S'il vous Plaît",
+      "FrSub": "",
+      "English": "Please",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Bonjour Trieste",
+      "FrSub": "Bonjour Tristesse",
+      "English": "Hello Sadness",
+      "EnSub": "Novel",
+      "Explanation": "Bonjour Tristesse is a novel by Françoise Sagan. Published in 1954, when the author was only 18, it was an overnight sensation.",
+      "ExpLink": "https://en.wikipedia.org/wiki/Bonjour_Tristesse",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2020-6-4"
+    },
+    {
+      "French": "Mal de Mer",
+      "FrSub": "",
+      "English": "Seasickness",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Mon Dieu",
+      "FrSub": "",
+      "English": "My God",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Son et Lumière",
+      "FrSub": "",
+      "English": "Sound and Light (show)",
+      "EnSub": "",
+      "Explanation": "Son et lumière, or a sound and light show, is a form of nighttime entertainment that is usually presented in an outdoor venue of historic significance.",
+      "ExpLink": "https://en.wikipedia.org/wiki/Son_et_lumière_(show)",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2020-4-13"
+    },
+    {
+      "French": "C'est la Vie",
+      "FrSub": "",
+      "English": "That's Life",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "San Fairy Ann",
+      "FrSub": "",
+      "English": "Deliberate Butchering of 'Ça ne fait rien'",
+      "EnSub": "",
+      "Explanation": "An expression of indifference to, or resigned acceptance of, a state of affairs, also san ferry ann, etc., jocularly represents the French phrase 'ça ne fait rien', meaning that doesn’t matter.",
+      "ExpLink": "https://wordhistories.net/2017/12/31/san-fairy-ann/",
+      "ExpSite": "wordhistories.net",
+      "ExpDate": ""
+    },
+    {
+      "French": "Garcon, la petite pois?",
+      "FrSub": "",
+      "English": "Garcon, la petite pois?",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "je ne sais quoi",
+      "FrSub": "",
+      "English": "I do not know what",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Pas de Bas",
+      "FrSub": "",
+      "English": "No Stockings (literal)",
+      "EnSub": "",
+      "Explanation": "In Highland dance, a pas de basque is described as follows: prepare with an extension of the working foot to second aerial position low. Spring to that side, bringing the new working foot into third or fifth position on the half point. Beat, without exaggeration, the ball of the other foot in third or fifth rear, sharply extending the front foot if required to begin the next movement.\nIn the Primary level, 16 of these are performed and it is considered a dance, so this is one of the first movements a Highland dancer learns.",
+      "ExpLink": "https://en.wikipedia.org/wiki/Pas_de_Basques",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2019-11-25"
+    },
+    {
+      "French": "Capo del Monte",
+      "FrSub": "(incorrect pronunciation of 'Capodimante' (porceilan) (italian)",
+      "English": "Capodimante (Porceilan)",
+      "EnSub": "Head of Mountain (literal)",
+      "Explanation": "Capodimonte porcelain (sometimes 'Capo di Monte') is porcelain created by the Capodimonte porcelain manufactory (Real Fabbrica di Capodimonte), which operated in Naples, Italy, between 1743 and 1759.",
+      "ExpLink": "https://en.wikipedia.org/wiki/Capodimonte_porcelain",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2019-3-3"
+    },
+    {
+      "French": "Bouillabaisse, mon ami",
+      "FrSub": "",
+      "English": "Fish Stew, My Friend",
+      "EnSub": "",
+      "Explanation": "Bouillabaisse is a traditional Provençal fish stew originating from the port city of Marseille.",
+      "ExpLink": "https://en.wikipedia.org/wiki/Bouillabaisse",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2020-9-29"
+    },
+    {
+      "French": "Pas-de-Calais",
+      "FrSub": "",
+      "English": "Pas-de-Calais",
+      "EnSub": "French Dept.",
+      "Explanation": "Pas-de-Calais is a department in northern France named after the French designation of the Strait of Dover, which it borders.",
+      "ExpLink": "https://en.wikipedia.org/wiki/Pas-de-Calais",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2020-10-5"
+    },
+    {
+      "French": "Champs-Élysées",
+      "FrSub": "",
+      "English": "Champs-Élysées",
+      "EnSub": "French Avenue",
+      "Explanation": "The Avenue des Champs-Élysées is an avenue in the 8th arrondissement of Paris, France, 1.9 kilometres (1.2 mi) long and 70 metres (230 ft) wide, running between the Place de la Concorde and the Place Charles de Gaulle, where the Arc de Triomphe is located.",
+      "ExpLink": "https://en.wikipedia.org/wiki/Champs-Élysées",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2020-10-10"
+    },
+    {
+      "French": "Manière d'être",
+      "FrSub": "",
+      "English": "Way to be",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Déjà vu",
+      "FrSub": "",
+      "English": "Already Seen",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Allemagne dix points",
+      "FrSub": "",
+      "English": "Such is life",
+      "EnSub": "Germany 10 Points (literal)",
+      "Explanation": "Meaning the inevitable, or 'such is life'. This is the kind of thing to occur on the eurovision song contest. Typical",
+      "ExpLink": "https://www.urbandictionary.com/define.php?term=Allemagne%20Dix%20points",
+      "ExpSite": "Urban Dictionary",
+      "ExpDate": "2003-12-8"
+    },
+    {
+      "French": "Au contraire",
+      "FrSub": "",
+      "English": "On The Contrary",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Sacrebleu",
+      "FrSub": "",
+      "English": "Damn It",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Bain-Marie",
+      "FrSub": "",
+      "English": "Water Bath",
+      "EnSub": "",
+      "Explanation": "A bain-marie, also known as a water bath or double boiler), a type of heated bath, is a piece of equipment used in science, industry, and cooking to heat materials gently or to keep materials warm over a period of time. A bain-marie is also used to melt ingredients for cooking.",
+      "ExpLink": "https://en.wikipedia.org/wiki/Bain-marie",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2020-10-16"
+    },
+    {
+      "French": "a fait accomplan",
+      "FrSub": "butchering of 'a fait accompli'",
+      "English": "An accomplished fact",
+      "EnSub": "",
+      "Explanation": "An accomplished fact, something that has already occurred; a (colloquial American) 'done deal'.",
+      "ExpLink": "https://en.wiktionary.org/wiki/fait_accompli",
+      "ExpSite": "Wiktionary",
+      "ExpDate": "2020-6-25"
+    },
+    {
+      "French": "Répondez vous š'il vous plaît",
+      "FrSub": "",
+      "English": "Please Answer",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Appellation Bordeaux contrôlée",
+      "FrSub": "",
+      "English": "('Appelation controllee' being a quality certification)",
+      "EnSub": "",
+      "Explanation": "In the Bordeaux wine region there are seven regional Appellations d'origine contrôlée (AOCs) that may be used throughout the Gironde department. These are Bordeaux Rouge AOC, Bordeaux Supérieur Rouge, Bordeaux Clairet, Bordeaux Rosé, Bordeaux Blanc, a dry white, Bordeaux Supérieur Blanc, a sweet white, and Crémant de Bordeaux, a sparkling méthode traditionnelle wine.",
+      "ExpLink": "https://en.wikipedia.org/wiki/Regional_Bordeaux_AOCs",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2020-1-2"
+    },
+    {
+      "French": "La plume de ma tante",
+      "FrSub": "",
+      "English": "My Aunt's Pen",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "boeuf à la mode",
+      "FrSub": "",
+      "English": "Fashionable Beef / Beef in Style",
+      "EnSub": "",
+      "Explanation": "Beef à la mode, or bœuf à la mode ('beef in style'), is a French version of what is known in the United States as pot roast. It is a way to prepare a tougher cut of beef'",
+      "ExpLink": "https://en.wikipedia.org/wiki/Boeuf_à_la_mode",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2020-1-2"
+    },
+    {
+      "French": "che sara, sara",
+      "FrSub": "",
+      "English": "What Will Be, Will Be",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "très bien ensemble",
+      "FrSub": "",
+      "English": "very good together",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "crème dã la menthe",
+      "FrSub": "",
+      "English": "mint cream",
+      "EnSub": "",
+      "Explanation": "Crème de menthe is a sweet, mint-flavored alcoholic beverage.",
+      "ExpLink": "https://en.wikipedia.org/wiki/Crème_de_menthe",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2020-10-13"
+    },
+    {
+      "French": "Jeux Sans Frontières",
+      "FrSub": "",
+      "English": "Games without Borders",
+      "EnSub": "TV Game Show",
+      "Explanation": "Jeux sans frontières ('Games Without Borders' in French) was a Europe-wide television game show, based on the French programme Intervilles which was first broadcast in 1962.",
+      "ExpLink": "https://en.wikipedia.org/wiki/Jeux_sans_frontières",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2020-10-16"
+    },
+    {
+      "French": "unison opportunnaire",
+      "FrSub": "",
+      "English": "Opportunistic Union",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Au Revoir",
+      "FrSub": "",
+      "English": "Goodbye",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "toujours la politesse",
+      "FrSub": "",
+      "English": "always politeness",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "À la mode",
+      "FrSub": "",
+      "English": "Fashionable / In Style",
+      "EnSub": "",
+      "Explanation": "Pie à la Mode (literally 'pie in the current fashion' / 'fashionable pie') is pie served with ice cream. The French culinary phrase à la mode used in the name of this American dessert is also encountered in other dishes such as boeuf à la mode (beef à la mode).",
+      "ExpLink": "https://en.wikipedia.org/wiki/Pie_à_la_Mode",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2020-9-21"
+    },
+    {
+      "French": "Bonne Bouche",
+      "FrSub": "",
+      "English": "Good Mouth(ful)",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Ordre du jour!",
+      "FrSub": "",
+      "English": "Agenda",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Servir Frais Mois Non Glace",
+      "FrSub": "",
+      "English": "Serve chilled, but no ice",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Attendez",
+      "FrSub": "",
+      "English": "Wait",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Mais oui",
+      "FrSub": "",
+      "English": "But Yes",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Bonjour",
+      "FrSub": "",
+      "English": "Hello",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "agent provocateur",
+      "FrSub": "",
+      "English": "provocative factor",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "La bonne vie",
+      "FrSub": "",
+      "English": "The Good life",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Ménage à trois",
+      "FrSub": "",
+      "English": "threesome",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Marque de Fabrique",
+      "FrSub": "",
+      "English": "brand",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "It's rien ne va plus",
+      "FrSub": "",
+      "English": "It's nothing ok",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Chambourcy nouvelle",
+      "FrSub": "",
+      "English": "New Chambourcy",
+      "EnSub": "",
+      "Explanation": "Chambourcy is a commune in the Yvelines department in the Île-de-France region in north-central France. It is located 3 km (1.9 mi) west of Saint-Germain-en-Laye and about 25 km (16 mi) west of Paris.",
+      "ExpLink": "https://en.wikipedia.org/wiki/Chambourcy",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2020-8-13"
+    },
+    {
+      "French": "L'état ç'est moi!",
+      "FrSub": "",
+      "English": "I am the state!",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Bonsoir",
+      "FrSub": "",
+      "English": "Good Evening",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "pas de deux",
+      "FrSub": "",
+      "English": "Step of Two",
+      "EnSub": "",
+      "Explanation": "In ballet, a pas de deux (French, literally 'step of two') is a dance duet in which two dancers, typically a male and a female, perform ballet steps together. The pas de deux is characteristic of classical ballet and can be found in many well-known ballets, including Sleeping Beauty, Swan Lake, and Giselle.",
+      "ExpLink": "https://en.wikipedia.org/wiki/Pas_de_deux",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2020-10-16"
+    },
+    {
+      "French": "Cutlery par excellence",
+      "FrSub": "",
+      "English": "The ultimate cutlery",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "joie-de-vivre",
+      "FrSub": "",
+      "English": "Joy of Life",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Petit dejeuner",
+      "FrSub": "",
+      "English": "Breakfast",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Après moi love de luge",
+      "FrSub": "",
+      "English": "After me love of sledding",
+      "EnSub": "",
+      "Explanation": "Used to indicate indifference to events that will happen after one’s death, or to indicate one’s own importance in maintaining order",
+      "ExpLink": "https://en.wiktionary.org/wiki/après_moi_le_déluge",
+      "ExpSite": "Wiktionary",
+      "ExpDate": "2019-11-11"
+    },
+    {
+      "French": "je ne sais quoi pourquoi",
+      "FrSub": "",
+      "English": "I don't know what why",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "rez de chasse (Mispronounced)",
+      "FrSub": "rez de chaussée (Proper pronunciation)",
+      "English": "Hunting Ground (Mispronounced)",
+      "EnSub": "Ground Floor (Proper pronunciation)",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Fabriqué Belgique",
+      "FrSub": "",
+      "English": "Made in Belgium",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Je suis, je reste",
+      "FrSub": "",
+      "English": "I am, I stay",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Je sui",
+      "FrSub": "",
+      "English": "I am",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Tête de veau",
+      "FrSub": "",
+      "English": "Head of Veal",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Moi",
+      "FrSub": "",
+      "English": "Me",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Chez",
+      "FrSub": "",
+      "English": "In",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Canapé de entroi",
+      "FrSub": "",
+      "English": "Entrance Couch",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Pour passer le temps",
+      "FrSub": "",
+      "English": "To Pass Time",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Vive La France!",
+      "FrSub": "",
+      "English": "Long Live France",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "objets d'art",
+      "FrSub": "",
+      "English": "Art",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Rien a dire, rien a faire",
+      "FrSub": "",
+      "English": "Nothing to say, nothing to do",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Conseil d'État",
+      "FrSub": "",
+      "English": "Board of state",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "bonnet de douche",
+      "FrSub": "",
+      "English": "Shower Cap",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Mont Blanc",
+      "FrSub": "",
+      "English": "Mont Banc",
+      "EnSub": "Mountain",
+      "Explanation": "Mont Blanc is the second-highest mountain in Europe after Mount Elbrus.",
+      "ExpLink": "https://en.wikipedia.org/wiki/Mont_Blanc",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2020-10-17"
+    },
+    {
+      "French": "Mangetout",
+      "FrSub": "",
+      "English": "Eat All",
+      "EnSub": "",
+      "Explanation": "Mangetout are young, tender garden peas. Find out when mangetout are in season, how to buy the best, and tips for storing and cooking this green veg.",
+      "ExpLink": "https://www.bbcgoodfood.com/glossary/mangetout-glossary",
+      "ExpSite": "BBC Good Food",
+      "ExpDate": ""
+    },
+    {
+      "French": "chapelle à dent",
+      "FrSub": "",
+      "English": "tooth chapel",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Mon Plaisir",
+      "FrSub": "",
+      "English": "My pleasure",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "laboratoire garni",
+      "FrSub": "",
+      "English": "Stocked Laboratory",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Châteauneuf-du-Pape",
+      "FrSub": "",
+      "English": "Châteauneuf-du-Pape",
+      "EnSub": "(Wine)",
+      "Explanation": "Châteauneuf-du-Pape is a French wine, an Appellation d'origine contrôlée (AOC) located around the village of Châteauneuf-du-Pape in the Rhône wine region in southeastern France.",
+      "ExpLink": "https://en.wikipedia.org/wiki/Châteauneuf-du-Pape_AOC",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2020-10-16"
+    },
+    {
+      "French": "Argent comptant",
+      "FrSub": "",
+      "English": "Cash",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "duck a I'orange",
+      "FrSub": "",
+      "English": "duck a I'orange",
+      "EnSub": "(food dish)",
+      "Explanation": "Duck à l'orange, orange duck, or canard à l'orange is a French dish in cuisine bourgeoise consisting of a roast duck with a bigarade sauce.\nAnother dish called canard à l'orange is a braised rather than roasted. In that case, it is cooked until spoon-tender.",
+      "ExpLink": "https://en.wikipedia.org/wiki/Duck_à_l%27orange",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2020-5-30"
+    },
+    {
+      "French": "tout suite",
+      "FrSub": "",
+      "English": "right now / immediately",
+      "EnSub": "",
+      "Explanation": "",
+      "ExpLink": "",
+      "ExpSite": "",
+      "ExpDate": ""
+    },
+    {
+      "French": "Champs Elysees!",
+      "FrSub": "",
+      "English": "Champs Elysees!",
+      "EnSub": "Avenue in Paris",
+      "Explanation": "The Avenue des Champs-Élysées is an avenue in the 8th arrondissement of Paris, France, 1.9 kilometres (1.2 mi) long and 70 metres (230 ft) wide, running between the Place de la Concorde and the Place Charles de Gaulle, where the Arc de Triomphe is located.",
+      "ExpLink": "https://en.wikipedia.org/wiki/Champs-Élysées",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2020-10-10"
+    },
+    {
+      "French": "Entente cordiale!",
+      "FrSub": "",
+      "English": "Cordial agreement",
+      "EnSub": "",
+      "Explanation": "The Entente Cordiale was a series of agreements signed on 8 April 1904 between the United Kingdom and the French Republic which saw a significant improvement in Anglo-French relations.",
+      "ExpLink": "https://en.wikipedia.org/wiki/Entente_Cordiale",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2020-10-4"
+    },
+    {
+      "French": "àla Bruchette (Mispronounced)",
+      "FrSub": "àla Bruschetta (Proper pronunciation)",
+      "English": "To the Bruchette (Mispronounced)",
+      "EnSub": "To the Bruschetta (Proper pronunciation)",
+      "Explanation": "Bruschetta is an antipasto (starter dish) from Italy consisting of grilled bread rubbed with garlic and topped with olive oil and salt.",
+      "ExpLink": "https://en.wikipedia.org/wiki/Bruschetta",
+      "ExpSite": "Wikipedia",
+      "ExpDate": "2020-9-25"
+    }
+  ]
+}
