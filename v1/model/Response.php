@@ -44,18 +44,18 @@
     }
 
     if (($this->_success !== false && $this->_success !== true)  || !is_numeric($this->_httpStatusCode)) {
-      $this->_responseData['success'] = false;
+      $this->_responseData['Success'] = false;
       http_response_code(500);
       $this->addMessage("500 Internal Server Error");
-      $this->_responseData['messages'] = $this->_messages;
+      $this->_responseData['Message(s)'] = $this->_messages;
     }
     else {
       http_response_code($this->_httpStatusCode);
-      $this->_responseData['rowsReturned'] = $this->_rowsReturned;
+      $this->_responseData['RowsReturned'] = $this->_rowsReturned;
       if (!empty($this->_messages)) {
-        $this->_responseData['messages'] = $this->_messages;
+        $this->_responseData['Message(s)'] = $this->_messages;
       }
-      $this->_responseData['data'] = $this->_data;
+      $this->_responseData['DataReturned'] = $this->_data;
     }
 
     echo json_encode($this->_responseData);

@@ -154,15 +154,15 @@ public function setExpSite($expSite) {
 
   public function getTranslationAsArray() {
     $translation = array();
-    $translation['id'] = $this->getId();
-    $translation['french'] = $this->getFrench();
-    $translation['frSub'] = $this->getFrSub();
-    $translation['english'] = $this->getEnglish();
-    $translation['enSub'] = $this->getEnSub();
-    $translation['explanation'] = $this->getExplanation();
-    $translation['expLink'] = $this->getExpLink();
-    $translation['expSite'] = $this->getExpSite();
-    $translation['expDate'] = $this->getExpDate();
+    $translation['TranslationID'] = $this->getId();
+    $translation['French'] = $this->getFrench();
+    $translation['FrSub'] = $this->getFrSub();
+    $translation['English'] = $this->getEnglish();
+    $translation['EnSub'] = $this->getEnSub();
+    $translation['Explanation'] = $this->getExplanation();
+    $translation['ExplanationLink'] = $this->getExpLink();
+    $translation['ExplanationSite'] = $this->getExpSite();
+    $translation['ExplanationDate'] = $this->getExpDate();
     return $translation;
   }
 

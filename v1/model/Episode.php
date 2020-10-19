@@ -109,13 +109,13 @@ class Episode {
 
   public function getEpisodeAsArray() {
     $episode = array();
-    $episode['id'] = $this->getId();
-    $episode['episodeName'] = $this->getEpisodeName();
-    $episode['seriesNum'] = $this->getSeriesNum();
-    $episode['episodeNum'] = $this->getEpisodeNum();
-    $episode['airDate'] = $this->getAirDate();
-    $episode['overview'] = $this->getOverview();
-    $episode['tmdbID'] = $this->getTmdbID();
+    $episode['EpisodeID'] = $this->getId();
+    $episode['EpisodeName'] = $this->getEpisodeName();
+    $episode['SeriesNumber'] = $this->getSeriesNum();
+    $episode['EpisodeNumber'] = $this->getEpisodeNum();
+    $episode['AirDate'] = $this->getAirDate();
+    $episode['Overview'] = $this->getOverview();
+    $episode['TmdbID'] = $this->getTmdbID();
     return $episode;
   }
 

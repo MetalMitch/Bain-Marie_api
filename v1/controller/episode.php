@@ -54,7 +54,7 @@ if(array_key_exists("episodeid", $_GET)) {
       }
 
       $returnData = array();
-      $returnData['episodes'] = $episodeArray;
+      $returnData['Episodes'] = $episodeArray;
       $response = new Response();
       $response->setHttpStatusCode(200);
       $response->setSuccess(true);
@@ -131,7 +131,7 @@ elseif(array_key_exists("seriesNum", $_GET)) {
         }
   
         $returnData = array();
-        $returnData['episodes'] = $episodeArray;
+        $returnData['Episodes'] = $episodeArray;
         $response = new Response();
         $response->setHttpStatusCode(200);
         $response->setSuccess(true);
@@ -182,7 +182,7 @@ elseif(array_key_exists("seriesNum", $_GET)) {
       }
 
       $returnData = array();
-      $returnData['episodes'] = $episodeArray;
+      $returnData['Episodes'] = $episodeArray;
       $response = new Response();
       $response->setHttpStatusCode(200);
       $response->setSuccess(true);
@@ -259,7 +259,7 @@ elseif(array_key_exists("episodeNum", $_GET)) {
           }
     
           $returnData = array();
-          $returnData['episodes'] = $episodeArray;
+          $returnData['Episodes'] = $episodeArray;
           $response = new Response();
           $response->setHttpStatusCode(200);
           $response->setSuccess(true);
@@ -313,7 +313,7 @@ elseif(array_key_exists("episodeNum", $_GET)) {
         }
   
         $returnData = array();
-        $returnData['episodes'] = $episodeArray;
+        $returnData['Episodes'] = $episodeArray;
         $response = new Response();
         $response->setHttpStatusCode(200);
         $response->setSuccess(true);
@@ -379,7 +379,7 @@ elseif(array_key_exists("episodeNum", $_GET)) {
       }
 
       $returnData = array();
-      $returnData['episodes'] = $episodeArray;
+      $returnData['Episodes'] = $episodeArray;
       $response = new Response();
       $response->setHttpStatusCode(200);
       $response->setSuccess(true);
@@ -448,7 +448,7 @@ elseif(array_key_exists("episodeNum", $_GET)) {
         }
   
         $returnData = array();
-        $returnData['episodes'] = $episodeArray;
+        $returnData['Episodes'] = $episodeArray;
         $response = new Response();
         $response->setHttpStatusCode(200);
         $response->setSuccess(true);
@@ -525,7 +525,7 @@ elseif(array_key_exists("episodeNum", $_GET)) {
         }
   
         $returnData = array();
-        $returnData['episodes'] = $episodeArray;
+        $returnData['Episodes'] = $episodeArray;
         $response = new Response();
         $response->setHttpStatusCode(200);
         $response->setSuccess(true);

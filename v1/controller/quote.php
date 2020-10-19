@@ -1,7 +1,7 @@
 <?php
 
 require_once('db.php');
-require_once('../model/Translation.php');
+require_once('../model/Quote.php');
 require_once('../model/Response.php');
 
 try {
@@ -18,14 +18,14 @@ catch(PDOException $exception) {
   exit;
 }
 
-if(array_key_exists("translationid", $_GET)) {
-  $translationid = $_GET['translationid'];
+if(array_key_exists("quoteid", $_GET)) {
+  $quoteid = $_GET['quoteid'];
 
-  if($translationid == '' || !is_numeric($translationid)) {
+  if($quoteid == '' || !is_numeric($quoteid)) {
     $response = new Response();
     $response->setHttpStatusCode(400);
     $response->setSuccess(false);
-    $response->addMessage("Translation ID: Cannot be null and must be numeric");
+    $response->addMessage("Quote ID: Cannot be null and must be numeric");
     $response->send();
     exit;
   }
@@ -33,28 +33,28 @@ if(array_key_exists("translationid", $_GET)) {
   if($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     try {
-      $query = $readDB->prepare('select ID, french, frSub, english, enSub, explanation, expLink, expSite, DATE_FORMAT(expDate, "%d-%m-%Y") as "expDate" from tbl_translations where ID = :translationid');
-      $query->bindParam(':translationid', $translationid, PDO::PARAM_INT);
+      $query = $readDB->prepare('select ID, TIME_FORMAT(time, "%H:%i:%s") as "time", context, episodeID, translationID from tbl_quotes where ID = :quoteid');
+      $query->bindParam(':quoteid', $quoteid, PDO::PARAM_INT);
       $query->execute();
 
       $rowCount = $query->rowCount();
-      $translationArray = array();
+      $quoteArray = array();
 
       if($rowCount === 0) {
         $response = new Response();
         $response->setHttpStatusCode(404);
         $response->setSuccess(false);
-        $response->addMessage("Translation ID Not Found");
+        $response->addMessage("Quote ID Not Found");
         $response->send();
         exit;
       }
       while($row = $query->fetch(PDO::FETCH_ASSOC)) {
-        $translation = new Translation($row['ID'], $row['french'], $row['frSub'], $row['english'], $row['enSub'], $row['explanation'], $row['expLink'], $row['expSite'], $row['expDate']);
-        $translationArray[] = $translation->getTranslationAsArray();
+        $quote = new Quote($row['ID'], $row['time'], $row['context'], $row['episodeID'], $row['translationID']);
+        $quoteArray[] = $quote->getQuoteAsArray();
       }
 
       $returnData = array();
-      $returnData['Translations'] = $translationArray;
+      $returnData['Quotes'] = $quoteArray;
       $response = new Response();
       $response->setHttpStatusCode(200);
       $response->setSuccess(true);
@@ -64,7 +64,7 @@ if(array_key_exists("translationid", $_GET)) {
       $response->send();
       exit;
     }
-    catch(TranslationException $exception) {
+    catch(QuoteException $exception) {
       $response = new Response();
       $response->setHttpStatusCode(500);
       $response->setSuccess(false);
@@ -77,7 +77,7 @@ if(array_key_exists("translationid", $_GET)) {
       $response = new Response();
       $response->setHttpStatusCode(500);
       $response->setSuccess(false);
-      $response->addMessage("Failed to Retrieve Translation(s)");
+      $response->addMessage("Failed to Retrieve Quote(s)");
       $response->send();
       exit;
     }
@@ -92,17 +92,14 @@ else {
   }
 }
 
-elseif (array_key_exists("Year", $_GET) || array_key_exists("year", $_GET)) {
-    $year = $_GET['Year'];
-    if ($year === null) {
-      $year = $_GET['year'];
-    }
-
-    if($year == '' || !is_numeric($year)) {
+if(array_key_exists("episodeID", $_GET)) {
+    $episodeID = $_GET['episodeID'];
+  
+    if($episodeID == '' || !is_numeric($episodeID)) {
       $response = new Response();
       $response->setHttpStatusCode(400);
       $response->setSuccess(false);
-      $response->addMessage("Year: Cannot be null and must be numeric");
+      $response->addMessage("Episode ID: Cannot be null and must be numeric");
       $response->send();
       exit;
     }
@@ -110,28 +107,28 @@ elseif (array_key_exists("Year", $_GET) || array_key_exists("year", $_GET)) {
     if($_SERVER['REQUEST_METHOD'] === 'GET') {
   
       try {
-        $query = $readDB->prepare('select ID, french, frSub, english, enSub, explanation, expLink, expSite, DATE_FORMAT(expDate, "%d-%m-%Y") as "expDate" from tbl_translations where YEAR(`expDate`) = :year');
-        $query->bindParam(':year', $year, PDO::PARAM_INT);
+        $query = $readDB->prepare('select ID, TIME_FORMAT(time, "%H:%i:%s") as "time", context, episodeID, translationID from tbl_quotes where episodeID = :episodeID');
+        $query->bindParam(':episodeID', $episodeID, PDO::PARAM_INT);
         $query->execute();
   
         $rowCount = $query->rowCount();
-        $translationArray = array();
+        $quoteArray = array();
   
         if($rowCount === 0) {
           $response = new Response();
           $response->setHttpStatusCode(404);
           $response->setSuccess(false);
-          $response->addMessage("Translations from Year Not Found");
+          $response->addMessage("Episode ID Not Found");
           $response->send();
           exit;
         }
         while($row = $query->fetch(PDO::FETCH_ASSOC)) {
-            $translation = new Translation($row['ID'], $row['french'], $row['frSub'], $row['english'], $row['enSub'], $row['explanation'], $row['expLink'], $row['expSite'], $row['expDate']);
-            $translationArray[] = $translation->getTranslationAsArray();
+          $quote = new Quote($row['ID'], $row['time'], $row['context'], $row['episodeID'], $row['translationID']);
+          $quoteArray[] = $quote->getQuoteAsArray();
         }
   
         $returnData = array();
-        $returnData['Translations'] = $translationArray;
+        $returnData['Quotes'] = $quoteArray;
         $response = new Response();
         $response->setHttpStatusCode(200);
         $response->setSuccess(true);
@@ -141,7 +138,7 @@ elseif (array_key_exists("Year", $_GET) || array_key_exists("year", $_GET)) {
         $response->send();
         exit;
       }
-      catch(TranslationException $exception) {
+      catch(QuoteException $exception) {
         $response = new Response();
         $response->setHttpStatusCode(500);
         $response->setSuccess(false);
@@ -154,7 +151,7 @@ elseif (array_key_exists("Year", $_GET) || array_key_exists("year", $_GET)) {
         $response = new Response();
         $response->setHttpStatusCode(500);
         $response->setSuccess(false);
-        $response->addMessage("Failed to Retrieve Translation(s)");
+        $response->addMessage("Failed to Retrieve Quote(s)");
         $response->send();
         exit;
       }
@@ -169,17 +166,14 @@ elseif (array_key_exists("Year", $_GET) || array_key_exists("year", $_GET)) {
     }
   }
 
-  elseif (array_key_exists("!Year", $_GET) || array_key_exists("!year", $_GET)) {
-    $year = $_GET['!Year'];
-    if ($year === null) {
-      $year = $_GET['!year'];
-    }
-
-    if($year == '' || !is_numeric($year)) {
+  if(array_key_exists("translationID", $_GET)) {
+    $translationID = $_GET['translationID'];
+  
+    if($translationID == '' || !is_numeric($translationID)) {
       $response = new Response();
       $response->setHttpStatusCode(400);
       $response->setSuccess(false);
-      $response->addMessage("Year: Cannot be null and must be numeric");
+      $response->addMessage("Translation ID: Cannot be null and must be numeric");
       $response->send();
       exit;
     }
@@ -187,28 +181,28 @@ elseif (array_key_exists("Year", $_GET) || array_key_exists("year", $_GET)) {
     if($_SERVER['REQUEST_METHOD'] === 'GET') {
   
       try {
-        $query = $readDB->prepare('select ID, french, frSub, english, enSub, explanation, expLink, expSite, DATE_FORMAT(expDate, "%d-%m-%Y") as "expDate" from tbl_translations where YEAR(`expDate`) != :year');
-        $query->bindParam(':year', $year, PDO::PARAM_INT);
+        $query = $readDB->prepare('select ID, TIME_FORMAT(time, "%H:%i:%s") as "time", context, episodeID, translationID from tbl_quotes where translationID = :translationID');
+        $query->bindParam(':translationID', $translationID, PDO::PARAM_INT);
         $query->execute();
   
         $rowCount = $query->rowCount();
-        $translationArray = array();
+        $quoteArray = array();
   
         if($rowCount === 0) {
           $response = new Response();
           $response->setHttpStatusCode(404);
           $response->setSuccess(false);
-          $response->addMessage("Translations from Year Not Found");
+          $response->addMessage("Translation ID Not Found");
           $response->send();
           exit;
         }
         while($row = $query->fetch(PDO::FETCH_ASSOC)) {
-            $translation = new Translation($row['ID'], $row['french'], $row['frSub'], $row['english'], $row['enSub'], $row['explanation'], $row['expLink'], $row['expSite'], $row['expDate']);
-            $translationArray[] = $translation->getTranslationAsArray();
+          $quote = new Quote($row['ID'], $row['time'], $row['context'], $row['episodeID'], $row['translationID']);
+          $quoteArray[] = $quote->getQuoteAsArray();
         }
   
         $returnData = array();
-        $returnData['Translations'] = $translationArray;
+        $returnData['Quotes'] = $quoteArray;
         $response = new Response();
         $response->setHttpStatusCode(200);
         $response->setSuccess(true);
@@ -218,7 +212,7 @@ elseif (array_key_exists("Year", $_GET) || array_key_exists("year", $_GET)) {
         $response->send();
         exit;
       }
-      catch(TranslationException $exception) {
+      catch(QuoteException $exception) {
         $response = new Response();
         $response->setHttpStatusCode(500);
         $response->setSuccess(false);
@@ -231,7 +225,7 @@ elseif (array_key_exists("Year", $_GET) || array_key_exists("year", $_GET)) {
         $response = new Response();
         $response->setHttpStatusCode(500);
         $response->setSuccess(false);
-        $response->addMessage("Failed to Retrieve Translation(s)");
+        $response->addMessage("Failed to Retrieve Quote(s)");
         $response->send();
         exit;
       }
